@@ -23,7 +23,7 @@ bulls_cows = print("""
 
  """)
 
-oddelovac = '='*50
+separator = '='*50
 
 if __name__ == '__main__':
     print(rules)
