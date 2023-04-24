@@ -1,17 +1,9 @@
 import random
-from time import perf_counter as pc
+import time
 from os import system
 
 #import rules_greeting
 
-# TODO main function
-def bulls_cows_game() -> None:
-    '''
-    Description:
-    The main function for running whole program.
-    '''
-    while True:
-        pass
 
 def num_generator() -> str:   
 
@@ -28,7 +20,7 @@ def num_generator() -> str:
             continue
         else:
             return ''.join(num_gen)
-
+    run = False
 
 def user_guess() -> str:   
     '''
@@ -44,12 +36,19 @@ def user_guess() -> str:
         else:
             return guess
 
-
-# TODO bulls and cows calculator function
 def count_bulls_cows(number,guess) -> int:
-     '''
+    '''
     Description:
     Counts numbers for Bulls and Cows. 
     '''
-     pass
+    bulls = 0
+    cows = 0
+    for x in range(len(user_guess())):
+        if guess[x] == number[x]:
+            bulls += 1
+        elif guess[x] in number:
+            cows += 1
+    return (cows,bulls)
+
+
 
