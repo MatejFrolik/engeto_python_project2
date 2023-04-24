@@ -20,6 +20,7 @@ bulls_cows = print("""¨
 
  """)
 
-print(rules)
-print(bulls_cows)
+if __name__ == '__main__':
+    print(rules)
+    print(bulls_cows)
 
