@@ -30,14 +30,20 @@ def num_generator() -> str:
             return ''.join(num_gen)
 
 
-# TODO user imput function
-def user_guess():   #return maybe (str,int,list with str/int....)
+def user_guess() -> str:   
     '''
     Description:
     User input 4digits number. User is not allowed 
     to insert longer number or other characters. 
     '''
-    pass
+    run = True
+    while run:
+        guess = input('Enter a 4 digits number which doesn\'t start with 0: ')
+        if len(guess) != 4 or not guess.isdigit() or guess[0] == '0':
+            print('Wrong input, please enter 4 digits number one more time')
+        else:
+            return guess
+
 
 # TODO bulls and cows calculator function
 def count_bulls_cows(number,guess) -> int:
