@@ -23,8 +23,10 @@ bulls_cows = print("""
 
  """)
 
+oddelovac = '='*50
+
 if __name__ == '__main__':
     print(rules)
     print(bulls_cows)
-
+    print(oddelovac)
 
