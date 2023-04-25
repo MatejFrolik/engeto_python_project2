@@ -1,6 +1,6 @@
 import random
 import time
-from os import system
+import os
 
 #import rules_greeting
 
@@ -60,6 +60,7 @@ def bulls_cows_game() -> None:
 #   rules_greeting.separator
 #   rules_greeting.rules
 #   rules_greetign.separator
+    os.system('clear')
     number = num_generator()
     guesses = 0
     program = True
