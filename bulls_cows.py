@@ -20,7 +20,6 @@ def num_generator() -> str:
         else:
             return ''.join(num_gen)
 
-print(num_generator())
 
 def user_guess() -> str:   
     '''
@@ -64,18 +63,19 @@ def bulls_cows_game() -> None:
     number = num_generator()
     guesses = 0
     program = True
+    start = time.time()
     while program:
             user_input = user_guess()
             guesses += 1
             cows,bulls = count_bulls_cows(number,user_input)
             print(f'cows: {cows} bulls: {bulls}')
-            if bulls == 2: 
-                print(f'You entered correct number. Number o attempts: {guesses}')
+            if bulls == 4: 
+                print(f'You entered correct number. Number o attempts: {guesses}.')
                 program = False
+                
+    end = time.time()
+    game_time = end-start
+    print(f'It tooks you: {game_time} seconds.')
 
-        
-start = time.time()
+
 bulls_cows_game()
-end = time.time()
-game_time = end-start
-print('čas programu', game_time)
