@@ -63,20 +63,19 @@ def bulls_cows_game() -> None:
 #   rules_greetign.separator
     number = num_generator()
     guesses = 0
-    t1 = time.perf_counter()
     program = True
-    while program :
-        t1 = time.perf_counter()
-        user_input = user_guess()
-        guesses += 1
-        cows,bulls = count_bulls_cows(number,user_input)
-        print(f'cows: {cows} bulls: {bulls}')
-        if bulls == 4: 
-            print(f'You entered correct number. Number o attempts: {guesses}')
-            break
-    t2 = time.perf_counter()
-    took_time = (t2-t1)
-    print(f'Time: {took_time}')
-        
+    while program:
+            user_input = user_guess()
+            guesses += 1
+            cows,bulls = count_bulls_cows(number,user_input)
+            print(f'cows: {cows} bulls: {bulls}')
+            if bulls == 2: 
+                print(f'You entered correct number. Number o attempts: {guesses}')
+                program = False
 
+        
+start = time.time()
 bulls_cows_game()
+end = time.time()
+game_time = end-start
+print('čas programu', game_time)
