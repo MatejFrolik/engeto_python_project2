@@ -2,7 +2,7 @@ import random
 import time
 import os
 
-#import rules_greeting
+import rules_greeting
 
 
 def num_generator() -> str:   
@@ -37,16 +37,16 @@ def user_guess() -> str:
 def count_bulls_cows(number,guess) -> int:
     '''
     Description:
-    Counts numbers for Bulls and Cows. 
+    Counts numbers of Bulls and Cows. Compare guess number and random number. 
     '''
     bulls = 0
     cows = 0
-    for x in range(len(guess)):
-        if guess[x] == number[x]:
+    for i in range(4):
+        if number[i] == guess[i]:
             bulls += 1
-        elif guess[x] in number:
+        elif number[i] != guess[i] and guess[i] in number:
             cows += 1
-    return (bulls, cows)
+    return bulls, cows
 
 
 
@@ -56,10 +56,21 @@ def bulls_cows_game() -> None:
     The main function for running whole program.
     '''
 
-#   rules_greeting.bulls_cows
-#   rules_greeting.separator
-#   rules_greeting.rules
-#   rules_greetign.separator
+    print(f'''
+              {rules_greeting.bulls_cows}
+              {rules_greeting.rules}
+              
+              
+              
+              
+              
+              
+              
+              
+
+              
+              ''')
+    
     os.system('clear')
     number = num_generator()
     guesses = 0
@@ -77,6 +88,5 @@ def bulls_cows_game() -> None:
     end = time.time()
     game_time = end-start
     print(f'It tooks you: {game_time} seconds.')
-
 
 bulls_cows_game()
